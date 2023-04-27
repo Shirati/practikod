@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors("CorsPolicy");
 
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -65,5 +65,5 @@ app.MapDelete("/items/{id}", async(ToDoDbContext context, int id)=>{
 
     return Results.NoContent();
 });
-
+app.MapGet("/",()=>"Server ToDoList running");
 app.Run();
