@@ -1,6 +1,11 @@
-const express =require('express');
-const app=express();
-app.get ('/',(req,res)=>{
+
+const sdk = require('api')('@render-api/v1.0#dnrc1ulf088q9j');
+
+sdk.auth('rnd_icqX3OOolvgyZJJGSbIodE0aMpsO');
+sdk.getServices({limit: '20'})
+  .then(({ data }) => console.log(data))
+  .catch(err => console.error(err));
+sdk.get ('/',(req,res)=>{
     res.status(200).json([
         {
           "cursor": "-rHARMqa7HN1OHRnazRxZW9vM2Fscm8w",
