@@ -1,76 +1,123 @@
+import express from 'express'
+// import require from 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+const app=express()
+const port=3000;
 
 const sdk = require('api')('@render-api/v1.0#dnrc1ulf088q9j');
 
-sdk.auth('rnd_icqX3OOolvgyZJJGSbIodE0aMpsO');
+sdk.auth('rnd_An5aF0HJkvfi5xNjHfHAJh7BSzgG');
 sdk.getServices({limit: '20'})
   .then(({ data }) => console.log(data))
   .catch(err => console.error(err));
-sdk.get ('/',(req,res)=>{
+
+  app.get('/',(req,res)=>{
     res.status(200).json([
-        {
-          "cursor": "-rHARMqa7HN1OHRnazRxZW9vM2Fscm8w",
-          "service": {
-            "id": "srv-ch98u8tgk4qeoo3alro0",
-            "autoDeploy": "yes",
-            "branch": "main",
-            "buildFilter": null,
-            "createdAt": "2023-05-03T16:43:15.856951Z",
-            "name": "ServerPractikod",
-            "notifyOnFail": "default",
-            "ownerId": "usr-ch53kq2k728glsjdd130",
-            "repo": "https://github.com/Shirati/practikod",
-            "rootDir": "./Server",
-            "slug": "serverpractikod",
-            "suspended": "not_suspended",
-            "suspenders": [],
-            "type": "web_service",
-            "updatedAt": "2023-05-09T08:23:04.538414Z",
-            "serviceDetails": {
-              "disk": null,
-              "env": "docker",
-              "envSpecificDetails": {
-                "dockerCommand": "",
-                "dockerContext": ".",
-                "dockerfilePath": "ToDoApi/Dockerfile"
-              },
-              "healthCheckPath": "",
-              "numInstances": 1,
-              "openPorts": null,
-              "parentServer": null,
-              "plan": "free",
-              "pullRequestPreviewsEnabled": "no",
-              "region": "oregon",
-              "url": "https://serverpractikod.onrender.com"
-            }
-          }
+  {
+    "cursor": "mmgIJbNRTERhcGU3YXZqYmJqcjY1a3Nn",
+    "service": {
+      "id": "srv-chgkape7avjbbjr65ksg",
+      "autoDeploy": "yes",
+      "branch": "main",
+      "buildFilter": null,
+      "createdAt": "2023-05-14T20:32:38.349245Z",
+      "name": "ToDoNode",
+      "notifyOnFail": "default",
+      "ownerId": "usr-ch54u5ks3fvqdilh4gfg",
+      "repo": "https://github.com/t058329/ToDoListNode",
+      "rootDir": "",
+      "slug": "todonode-nb8z",
+      "suspended": "not_suspended",
+      "suspenders": [],
+      "type": "web_service",
+      "updatedAt": "2023-05-14T20:56:46.656581Z",
+      "serviceDetails": {
+        "disk": null,
+        "env": "node",
+        "envSpecificDetails": {
+          "buildCommand": "npm i",
+          "startCommand": "node index.js"
         },
-        {
-          "cursor": "b2zxhAOMt4wwZzJrNzI4Z2xzamcxZWUw",
-          "service": {
-            "id": "srv-ch540g2k728glsjg1ee0",
-            "autoDeploy": "yes",
-            "branch": "main",
-            "buildFilter": null,
-            "createdAt": "2023-04-27T09:28:32.7781Z",
-            "name": "practikod",
-            "notifyOnFail": "default",
-            "ownerId": "usr-ch53kq2k728glsjdd130",
-            "repo": "https://github.com/Shirati/practikod",
-            "rootDir": "./Client",
-            "slug": "practikod",
-            "suspended": "not_suspended",
-            "suspenders": [],
-            "type": "static_site",
-            "updatedAt": "2023-05-09T08:06:46.084282Z",
-            "serviceDetails": {
-              "buildCommand": "npm run build",
-              "parentServer": null,
-              "publishPath": "build",
-              "pullRequestPreviewsEnabled": "no",
-              "url": "https://practikod.onrender.com"
-            }
-          }
-        }
-      ])
+        "healthCheckPath": "",
+        "numInstances": 1,
+        "openPorts": null,
+        "parentServer": null,
+        "plan": "free",
+        "pullRequestPreviewsEnabled": "no",
+        "region": "singapore",
+        "url": "https://todonode-nb8z.onrender.com"
+      }
+    }
+  },
+  {
+    "cursor": "0YUhloWSeyltbm03YXZqZGwyOWtibGww",
+    "service": {
+      "id": "srv-ch9vmnm7avjdl29kbll0",
+      "autoDeploy": "yes",
+      "branch": "main",
+      "buildFilter": null,
+      "createdAt": "2023-05-04T18:37:18.901699Z",
+      "name": "ToDoServer",
+      "notifyOnFail": "default",
+      "ownerId": "usr-ch54u5ks3fvqdilh4gfg",
+      "repo": "https://github.com/t058329/ToDoList",
+      "rootDir": "",
+      "slug": "todoserver-xrby",
+      "suspended": "not_suspended",
+      "suspenders": [],
+      "type": "web_service",
+      "updatedAt": "2023-05-15T14:54:26.134646Z",
+      "serviceDetails": {
+        "disk": null,
+        "env": "docker",
+        "envSpecificDetails": {
+          "dockerCommand": "",
+          "dockerContext": ".",
+          "dockerfilePath": "Dockerfile"
+        },
+        "healthCheckPath": "",
+        "numInstances": 1,
+        "openPorts": null,
+        "parentServer": null,
+        "plan": "free",
+        "pullRequestPreviewsEnabled": "no",
+        "region": "singapore",
+        "url": "https://todoserver-xrby.onrender.com"
+      }
+    }
+  },
+  {
+    "cursor": "JUxQ_VC3N84xOWRnazRxOHBhc3ZoZGMw",
+    "service": {
+      "id": "srv-ch5519dgk4q8pasvhdc0",
+      "autoDeploy": "yes",
+      "branch": "main",
+      "buildFilter": null,
+      "createdAt": "2023-04-27T10:38:29.895513Z",
+      "name": "ToDoClient",
+      "notifyOnFail": "default",
+      "ownerId": "usr-ch54u5ks3fvqdilh4gfg",
+      "repo": "https://github.com/t058329/ToDoListClient",
+      "rootDir": "",
+      "slug": "todoclient-981i",
+      "suspended": "not_suspended",
+      "suspenders": [],
+      "type": "static_site",
+      "updatedAt": "2023-05-13T22:06:35.275676Z",
+      "serviceDetails": {
+        "buildCommand": "npm run build",
+        "parentServer": null,
+        "publishPath": "build",
+        "pullRequestPreviewsEnabled": "no",
+        "url": "https://todoclient-981i.onrender.com"
+      }
+    }
+  }
+])
 })
-module.exports =app;
+app.listen(port,()=>{
+    console.log(`app listening on http://localhost:${port}`)
+})
+console.log("hi")
