@@ -1,6 +1,6 @@
-const http =require('http');
-const port =3000;
-const app =require('./app');
-const server= http.createServer(app);
+const sdk = require('api')('@render-api/v1.0#5yi85d37lhqedd36');
 
-server.listen(port);
+sdk.auth('rnd_58N7hBqjEA93gScEYxnlzuMEafm4');
+sdk.getServices({limit: '20'})
+  .then(({ data }) => console.log(data))
+  .catch(err => console.error(err));
